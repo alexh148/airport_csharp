@@ -9,6 +9,7 @@ namespace AirportCSharp.ClassLibraries
         public int capacity;
         public Weather weather;
 
+        // Constructors
         public Airport()
         {
             planes = new ArrayList();
@@ -23,19 +24,36 @@ namespace AirportCSharp.ClassLibraries
             weather = new Weather();
         }
 
+        public Airport(Weather thisWeather)
+        {
+            planes = new ArrayList();
+            capacity = 20;
+            weather = thisWeather;
+        }
+
+        // Instance Methods
         public void Land(Plane thisPlane)
         { 
             if (planes.Count == capacity)
             {
-                throw new InvalidOperationException("Airport Is Full");
+                throw new InvalidOperationException("Airport is Full, cannot Land");
+            }
+            if (weather.IsNotSafe())
+            {
+                throw new InvalidOperationException("Weather is Stormy, cannot Land");
             }
             planes.Add(thisPlane);
         }
 
         public void TakeOff(Plane thisPlane)
         {
+            if (weather.IsNotSafe())
+            {
+                throw new InvalidOperationException("Weather is Stormy, cannot Take Off");
+            }
             planes.Remove(thisPlane);
         }
+
     }
 }
 

@@ -10,7 +10,10 @@ namespace AirportCSharp.UnitTests
         [Test]
         public void WhenInitialized_IsntFlying()
         {
+            // Arrange
             Plane plane = new Plane();
+
+            // Assert
             Assert.False(plane.flying);
         }
     }

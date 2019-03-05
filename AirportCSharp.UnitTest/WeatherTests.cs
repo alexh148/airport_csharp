@@ -13,10 +13,14 @@ namespace AirportCSharp.UnitTests
         [TestCase(10, true)]
         public void Returns_Sunny_Or_Stormy(int input, bool output)
         {
+            // Arrange
             Weather weather = new Weather();
-            bool safeWeather = weather.Safe(input);
-            Assert.That(safeWeather, Is.EqualTo(output));
 
+            // Act
+            bool safeWeather = weather.Safe(input);
+
+            // Assert
+            Assert.That(safeWeather, Is.EqualTo(output));
         }
     }
 }

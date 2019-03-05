@@ -23,9 +23,9 @@ namespace AirportCSharp.ClassLibraries
             return false;
         }
 
-        public bool IsStormy()
+        public virtual bool IsNotSafe()
         {
-            return false;
+            return SafeToLand;
         }
     }
 }
