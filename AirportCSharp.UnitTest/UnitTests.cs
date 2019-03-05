@@ -1,15 +1,19 @@
 ﻿using System;
+using AirportCSharp.ClassLibraries;
 using NUnit.Framework;
 
 namespace AirportCSharp.UnitTests
 {
     [TestFixture]
-    public class FizzBuzzTests
+    public class AirportTests
     {
         [Test]
-        public void TestCheck()
+        public void WhenInitialized_HasCapacity()
         {
-            Assert.AreEqual(1, 1);
+            Airport airport = new Airport();
+            Array arr = airport.Planes;
+            int length = arr.Length;
+            Assert.AreEqual(20, length);
         }
     }
 }
