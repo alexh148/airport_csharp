@@ -1,19 +1,16 @@
-using System;
+﻿using System;
 using NUnit.Framework;
-using AirportCSharp.ClassLibraries;
 
 namespace AirportCSharp.UnitTests
 {
     [TestFixture]
-    public class UnitTests
+    public class FizzBuzzTests
     {
-
         [Test]
         public void TestCheck()
         {
-            Assert.AreEqual(3, 3);
+            Assert.AreEqual(1, 1);
         }
-
-
     }
 }
+
