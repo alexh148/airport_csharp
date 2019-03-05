@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using Moq;
 using AirportCSharp.ClassLibraries;
 using NUnit.Framework;
 
@@ -8,12 +10,25 @@ namespace AirportCSharp.UnitTests
     public class AirportTests
     {
         [Test]
-        public void WhenInitialized_HasCapacity()
+        public void LandPlane()
+        {
+            var testPlane = new Mock<Plane>();
+            Airport airport = new Airport();
+            airport.Land(testPlane.Object);
+            Console.Write(airport.planes[0]);
+            CollectionAssert.Contains(airport.planes, testPlane.Object);
+        }
+        [Test]
+        public void MaxCapacity()
         {
             Airport airport = new Airport();
-            Array arr = airport.planes;
-            int length = arr.Length;
-            Assert.AreEqual(20, length);
+            var testPlane = new Mock<Plane>();
+            for (int i = 0; i < airport.capacity; i++)
+            {
+                airport.Land(testPlane.Object);
+            }
+            Assert.That(() => airport.Land(testPlane.Object),
+               Throws.TypeOf<InvalidOperationException>());
         }
     }
 }
