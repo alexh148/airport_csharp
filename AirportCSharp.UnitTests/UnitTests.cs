@@ -7,11 +7,7 @@ namespace AirportCSharp.UnitTests
     [TestFixture]
     public class UnitTests
     {
-<<<<<<< HEAD
-        //Just want to see if i'm able to push/ pull
-    }
-}
-=======
+
         [Test]
         public void TestCheck()
         {
@@ -20,5 +16,4 @@ namespace AirportCSharp.UnitTests
 
 
     }
->>>>>>> 8dd9f4c... TestCheck
 }
