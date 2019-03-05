@@ -3,17 +3,29 @@ namespace AirportCSharp.ClassLibraries
 {
     public class Weather
     {
-        public static int randomRoll()
+        public bool SafeToLand { get; set; }
+
+        public Weather()
+        {
+            SafeToLand = Safe(RandomRoll());
+        }
+
+        public int RandomRoll()
         {
             Random rnd = new Random();
             int roll = rnd.Next(1, 10);
             return roll;
         }
 
-        public static string assignWeather(int roll)
+        public bool Safe(int roll)
         {
-            if (roll > 2) { return "Sunny"; }
-            return "Stormy";
+            if (roll > 2) { return true; }
+            return false;
+        }
+
+        public bool IsStormy()
+        {
+            return false;
         }
     }
 }

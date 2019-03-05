@@ -19,7 +19,6 @@ namespace AirportCSharp
             airport.Land(plane2);
             airport.Land(plane3);
             var planeCheck = airport.planes[0];
-            Console.WriteLine(airport.weather);
         }
     }
 }

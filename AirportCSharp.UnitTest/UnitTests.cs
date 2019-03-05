@@ -39,5 +39,16 @@ namespace AirportCSharp.UnitTests
             airport.TakeOff(testPlane.Object);
             CollectionAssert.DoesNotContain(airport.planes, testPlane.Object);
         }
+        //[Test]
+        //public void AttemptingToLandInStormyWeather()
+        //{
+            //Airport airport = new Airport();
+            //var testPlane = new Mock<Plane>();
+            //Mock<Weather> weather = new Mock<Weather>();
+            //weather.Setup(x => x.IsStormy()).Returns(true);
+            //Assert.That(() => airport.Land(testPlane.Object),
+            //Assert.That(Weather.IsStormy()).Returns(false);
+                //Throws.TypeOf<InvalidOperationException>());
+                // }
     }
 }
