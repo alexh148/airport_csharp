@@ -30,5 +30,14 @@ namespace AirportCSharp.UnitTests
             Assert.That(() => airport.Land(testPlane.Object),
                Throws.TypeOf<InvalidOperationException>());
         }
+        [Test]
+        public void TakeOff()
+        {
+            var testPlane = new Mock<Plane>();
+            Airport airport = new Airport();
+            airport.Land(testPlane.Object);
+            airport.TakeOff(testPlane.Object);
+            CollectionAssert.DoesNotContain(airport.planes, testPlane.Object);
+        }
     }
 }

@@ -13,9 +13,13 @@ namespace AirportCSharp.ClassLibraries
         { 
             if (planes.Count == capacity)
             {
-                throw new System.InvalidOperationException("Airport Is Full");
+                throw new InvalidOperationException("Airport Is Full");
             }
             planes.Add(thisPlane);
+        }
+        public void TakeOff(Plane thisPlane)
+        {
+            planes.Remove(thisPlane);
         }
     }
 }
