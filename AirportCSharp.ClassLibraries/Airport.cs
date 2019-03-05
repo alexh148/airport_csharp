@@ -4,7 +4,6 @@ namespace AirportCSharp.ClassLibraries
 {
     public class Airport
     {
-        public int[] Planes = new int[20];
-        
+        public Plane[] planes = new Plane[20];
     }
 }

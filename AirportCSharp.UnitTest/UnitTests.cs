@@ -11,7 +11,7 @@ namespace AirportCSharp.UnitTests
         public void WhenInitialized_HasCapacity()
         {
             Airport airport = new Airport();
-            Array arr = airport.Planes;
+            Array arr = airport.planes;
             int length = arr.Length;
             Assert.AreEqual(20, length);
         }

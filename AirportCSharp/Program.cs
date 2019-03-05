@@ -1,4 +1,5 @@
 ﻿using System;
+using AirportCSharp.ClassLibraries;
 
 namespace AirportCSharp
 {
@@ -7,6 +8,8 @@ namespace AirportCSharp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Airport airport = new Airport();
+            Console.WriteLine(airport.planes);
         }
     }
 }
